@@ -25,6 +25,10 @@ body {
   color: #282828;
   font-size: 2rem;
   position: relative;
+  background-image: url('back.avif');
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  background-position: center;
   
 }
 footer {
@@ -68,7 +72,7 @@ footer {
 }
 
 .yellow {
-  color: #ffd100;
+  color: #0011ff;
 }
 
 button {
@@ -205,8 +209,8 @@ button {
   overflow: hidden;
   border-radius: 0.25rem;
   padding: 3vmin;
-  background: #7ba7bc;
-  mix-blend-mode: multiply;
+  background: #076997;
+  /* mix-blend-mode: multiply; */
   box-shadow: 0.2rem 0.3rem 0.4rem rgba(83, 86, 90, 0.3), -0.25rem -0.25rem 0.25rem rgba(89, 144, 171, 0.5) inset, 0.25rem 0.25rem 0.25rem rgba(157, 190, 205, 0.8) inset;
 }
 @media (min-width: 40rem) {
