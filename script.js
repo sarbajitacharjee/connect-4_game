@@ -98,7 +98,7 @@ const emptyGrid = [
         },
     
         getPieceIcon(color) {
-          return color == "yellow" ? "⭐" : "🔴";
+          return color == "yellow" ? "❤️" : "💜";
         },
     
         //Runs through all possible win scenarios (and some impossible) to see if the game is over
@@ -155,7 +155,7 @@ const emptyGrid = [
     
       computed: {
         currentTurnColor() {
-          return this.redTurn ? "red" : "yellow";
+          return this.redTurn ? "Purple" : "yellow";
         },
     
         message() {

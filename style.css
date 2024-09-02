@@ -61,14 +61,14 @@ footer {
   box-shadow: 7px 5px 56px -10px #5ad900;
  }  
 
-.red,
+.Purple,
 .yellow {
   text-transform: capitalize;
   margin-right: 0.1em;
 }
 
-.red {
-  color: #e4002b;
+.Purple {
+  color: #a20dcf;
 }
 
 .yellow {
@@ -148,7 +148,7 @@ button {
   border-left: 1vmin solid transparent;
   border-right: 1vmin solid transparent;
   border-bottom: none;
-  border-top: 1vmin solid #a7a8aa;
+  border-top: 1vmin solid #002f8c;
   text-align: center;
   pointer-events: none;
   display: block;
@@ -158,7 +158,7 @@ button {
   width: 4vmin;
   height: 4vmin;
   border-radius: 4vmin;
-  border: 3px solid #a7a8aa;
+  border: 3px solid #0553f0;
   left: -2vmin;
   top: -2.7vmin;
   display: block;
@@ -209,9 +209,9 @@ button {
   overflow: hidden;
   border-radius: 0.25rem;
   padding: 3vmin;
-  background: #076997;
+  background: #379707;
   /* mix-blend-mode: multiply; */
-  box-shadow: 0.2rem 0.3rem 0.4rem rgba(83, 86, 90, 0.3), -0.25rem -0.25rem 0.25rem rgba(89, 144, 171, 0.5) inset, 0.25rem 0.25rem 0.25rem rgba(157, 190, 205, 0.8) inset;
+  box-shadow: 0.2rem 0.3rem 0.4rem rgba(26, 176, 9, 0.3), -0.25rem -0.25rem 0.25rem rgba(89, 171, 94, 0.5) inset, 0.25rem 0.25rem 0.25rem rgba(8, 172, 8, 0.8) inset;
 }
 @media (min-width: 40rem) {
   #board {
@@ -237,7 +237,7 @@ button {
 .slot.shadow {
   box-shadow: 0.15rem 0.15rem 1px rgba(174, 201, 214, 0.5), -0.15rem -0.15rem 1px rgba(79, 131, 156, 0.5), 0.2rem 0.2rem 0.2rem rgba(83, 86, 90, 0.3) inset;
 }
-.slot .red,
+.slot .Purple,
 .slot .yellow {
   width: inherit;
   height: inherit;
@@ -251,11 +251,11 @@ button {
   text-align: center;
   color: rgba(0, 0, 0, 0.4);
 }
-.slot .red.loser,
+.slot .Purple.loser,
 .slot .yellow.loser {
   filter: opacity(0.7) grayscale(60%) contrast(0.4);
 }
-.slot .red:before,
+.slot .Purple:before,
 .slot .yellow:before {
   content: "";
   width: 70%;
@@ -266,8 +266,8 @@ button {
   top: 15%;
   position: absolute;
 }
-.slot .red {
-  background: #e4002b;
+.slot .Purple {
+  background: rgb(218, 8, 218);
 }
 .slot .yellow {
   background: #ffd100;
@@ -286,8 +286,8 @@ button {
   transform: scale(0);
   pointer-events: none;
 }
-#winner-burst.red {
-  background-color: #e4002b;
+#winner-burst.Purple {
+  background-color: rgb(218, 8, 218);
 }
 #winner-burst.yellow {
   background-color: #ffd100;
