@@ -18,11 +18,12 @@
 }
 
 body {
-  font-family:'Robus',cursive;
+  font-family:'knight warrior',cursive;
   margin: 0;
   min-height: 100vh;
   box-sizing: border-box;
   color: #282828;
+  letter-spacing: 2px;
   font-size: 2rem;
   position: relative;
   background-image: url('back.avif');
@@ -72,7 +73,7 @@ footer {
 }
 
 .yellow {
-  color: #0011ff;
+  color: yellow;
 }
 
 button {
@@ -203,6 +204,7 @@ button {
 #board {
   margin: auto;
   display: grid;
+  cursor: pointer;
   grid-gap: 3vmin;
   grid-template-columns: repeat(8, 1fr);
   justify-content: center;
