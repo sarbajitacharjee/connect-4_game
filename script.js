@@ -1,6 +1,4 @@
-//Tried auto-generating this grid to keep the syntax shorter,
-//but ran into issues with object duplication (when one updates, all update),
-//so I just stuck with this ¯\_(ツ)_/¯
+
 const emptyGrid = [
     [{}, {}, {}, {}, {}, {}, {}, {}],
     [{}, {}, {}, {}, {}, {}, {}, {}],

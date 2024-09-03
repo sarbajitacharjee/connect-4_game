@@ -1,28 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Connect 4 Game</title>
-  <link rel = "icon" href="Logo.png" type = "png">
-  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2:400,700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
-
+  <!-- Favicon for the webpage -->
+  <link rel="icon" href="Logo.png" type="png">
+  
+  <!-- Google Font for styling the text -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2:400,700&display=swap" rel="stylesheet">
+  
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
+
+<!-- Main game container -->
 <div id="game">
 
+	<!-- Visual effect for winning burst animation -->
 	<div id="winner-burst" :class="[currentTurnColor, gameOver && 'burst']"></div>
 
+	<!-- Flex container for game message and new game button -->
 	<div class="flex">
+		<!-- Displaying game status message -->
 		<p v-html="message" role="status"></p>
+		<!-- Button to start a new game, disabled if there are no moves left -->
 		<button :disabled="!areThereMoves" @click="startNewGame" id="bottone1">New game</button>
 	</div>
 
+	<!-- Container for the buttons to drop pieces -->
 	<div id="button-board">
-		<div v-for="i in 8" :data-column="i - 1" @click.stop="dropPiece" >
+		<!-- Loop to create 8 columns for the buttons -->
+		<div v-for="i in 8" :data-column="i - 1" @click.stop="dropPiece">
+			<!-- Button for each column, with accessibility and interaction attributes -->
 			<button :data-column="i - 1" @click.stop="dropPiece" @keydown="handleMoveCursor" @mouseover="handleHover" :aria-label="`Drop ${currentTurnColor} piece in column ${i}`" :tabindex="gameOver || isADraw ? '-1' : '0'">
 				<span></span>
 			</button>
+			<!-- Hidden slot that will appear during gameplay -->
 			<div class="slot" :hidden="gameOver || isADraw" aria-hidden="true">
 				<div :class="currentTurnColor">
 					{{ getPieceIcon(currentTurnColor) }}
@@ -31,10 +45,14 @@
 		</div>
 	</div>
 
+	<!-- The main game board where pieces will be displayed -->
 	<div id="board">
+		<!-- Loop through each row and slot of the game grid -->
 		<template v-for="row, rowNumber in grid">
 			<template v-for="slot, slotNumber in row">
-				<div class="slot shadow" @click="dropPiece" @mouseover="handleSlotHover" :style="slot.color && `animation: drop 0.05s forwards steps(6)`" :data-row="rowNumber" :data-column="slotNumber" :key="`${rowNumber}${slotNumber}`" :aria-label="`${slot.color && slot.color + ' piece' || 'Blank slot'} in column ${slotNumber +1} of 8, row ${rowNumber +1} of 6.` ">
+				<!-- Each slot on the board, with styles applied for piece animation and appearance -->
+				<div class="slot shadow" @click="dropPiece" @mouseover="handleSlotHover" :style="slot.color && `animation: drop 0.05s forwards steps(6)`" :data-row="rowNumber" :data-column="slotNumber" :key="`${rowNumber}${slotNumber}`" :aria-label="`${slot.color && slot.color + ' piece' || 'Blank slot'} in column ${slotNumber + 1} of 8, row ${rowNumber + 1} of 6.`">
+					<!-- The piece inside the slot, if present -->
 					<div v-if="slot.color" :class="[slot.color, gameOver && currentTurnColor != slot.color && 'loser']" aria-hidden="true">
 						{{ getPieceIcon(slot.color) }}
 					</div>
@@ -44,11 +62,10 @@
 	</div>
 </div>
 
-
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="script.js"></script>
+<!-- Vue.js library for reactive components -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script>
+<!-- External JavaScript file for game logic -->
+<script src="script.js"></script>
 
 </body>
 </html>
-
-
